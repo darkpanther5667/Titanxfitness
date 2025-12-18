@@ -1,12 +1,5 @@
 "use client";
 
-import styles from "./exercises.css"; // Importing global CSS module
-// Since we used a raw CSS file in the previous step, we'll actually need to import it as a module or use global classes.
-// Let's create a proper module CSS first to avoid issues, or stick to a layout wrapper.
-// Correction: I wrote to `exercises.css`. I should use `exercises.module.css` for Next.js best practices or import it in layout.
-// For this step, I will create the Page using inline styles or the css file if imported globally, 
-// BUT simply renaming the previous file to module.css is safer.
-
 import { ArrowLeft, Dumbbell, Flame, Timer, Zap } from "lucide-react";
 import Link from "next/link";
 import "./exercises.css";
