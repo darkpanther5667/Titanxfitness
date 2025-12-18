@@ -1,0 +1,460 @@
+.wrapper {
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(5, 5, 5, 0.85), rgba(5, 5, 5, 0.95)), url('/anime_bg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    padding-bottom: 5rem;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.settingsButton {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-muted);
+    padding: 0.7rem 1.2rem;
+    border-radius: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    transition: all 0.2s ease;
+}
+
+.settingsButton:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-main);
+    border-color: var(--primary);
+    transform: translateY(-1px);
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.1);
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.welcomeUser {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Profile Section */
+.profileSection {
+    background: var(--surface);
+    border-radius: 24px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.profileSection::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(0, 240, 255, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
+    z-index: 0;
+}
+
+.profileInfo {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    z-index: 1;
+    flex: 2;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid var(--primary);
+    box-shadow: 0 0 20px var(--primary-glow);
+    object-fit: cover;
+}
+
+.profileText h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.levelBadge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(112, 0, 255, 0.1);
+    color: var(--secondary);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    border: 1px solid rgba(112, 0, 255, 0.2);
+}
+
+.profileStats {
+    display: flex;
+    gap: 2rem;
+    z-index: 1;
+    flex: 3;
+    justify-content: flex-end;
+}
+
+.statItem {
+    text-align: center;
+}
+
+.statValue {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.statLabel {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Trackers Grid */
+.sectionTitle {
+    font-size: 1.5rem;
+    margin: 2rem 0 1rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.trackersGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.trackerCard {
+    background: var(--surface);
+    border-radius: 20px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.2s, border-color 0.2s;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.trackerCard:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+}
+
+.trackerHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.iconBox {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+}
+
+.cardTitle {
+    font-size: 1.1rem;
+    color: var(--text-main);
+    font-weight: 600;
+}
+
+.cardSubtitle {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.progressBar {
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    margin-top: 1rem;
+    overflow: hidden;
+}
+
+.progressFill {
+    height: 100%;
+    background: var(--gradient-main);
+    border-radius: 3px;
+}
+
+/* Activity Feed (Previous List) */
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.listItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem;
+    background: var(--surface);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    transition: background 0.2s;
+}
+
+.listItem:hover {
+    background: var(--surface-highlight);
+}
+
+.workoutInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.workoutName {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+
+/* AI Insight Banner */
+.insightBanner {
+    background: linear-gradient(135deg, rgba(112, 0, 255, 0.1) 0%, rgba(5, 5, 5, 0) 100%);
+    border: 1px solid rgba(112, 0, 255, 0.3);
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.insightIcon {
+    background: var(--secondary);
+    color: white;
+    padding: 0.5rem;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 15px rgba(112, 0, 255, 0.4);
+}
+
+.insightContent h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    color: var(--secondary);
+}
+
+.insightContent p {
+    font-size: 0.9rem;
+    color: var(--text-main);
+    line-height: 1.4;
+}
+
+/* New Tracker Styles */
+.cardValueMain {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-top: 0.5rem;
+}
+
+.unit {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 400;
+}
+
+.cardPlus {
+    background: rgba(0, 240, 255, 0.1);
+    color: var(--primary);
+    padding: 0.2rem 0.6rem;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* Modal Styles */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease;
+}
+
+.modalContent {
+    background: rgba(18, 18, 20, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    width: 90%;
+    max-width: 400px;
+    padding: 2rem;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    animation: slideUp 0.3s ease;
+}
+
+.modalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.modalHeader h3 {
+    margin: 0;
+    color: var(--text-main);
+}
+
+.closeButton {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.closeButton:hover {
+    color: var(--text-main);
+}
+
+.modalInput {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: white;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    outline: none;
+}
+
+.modalInput:focus {
+    border-color: var(--primary);
+}
+
+.modalButton {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 12px;
+    background: var(--primary);
+    color: black;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.modalButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 240, 255, 0.3);
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Header Actions */
+.headerActions {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+
+    .headerActions {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .settingsButton {
+        flex: 1;
+        justify-content: center;
+    }
+
+    .profileSection {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2rem;
+        padding: 1.5rem;
+    }
+
+    .profileStats {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .statValue {
+        font-size: 1.2rem;
+    }
+
+    .trackersGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .insightBanner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+}
