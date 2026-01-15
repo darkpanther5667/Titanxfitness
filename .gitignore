@@ -46,3 +46,5 @@ cat.env.local
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+.vercel
